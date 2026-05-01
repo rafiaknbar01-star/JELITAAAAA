@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Terima Kasih</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #ff4081;
+      padding: 0 20px;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<img src="gambar.png" alt="gambar">
+<h2>okayyy terimakasih sudah memaafkan Muhammad Rafi Akbar, I promise i'll never say that again in future</h2>
+
+<script>
+  const emojis = ["❤️", "🌸", "💖", "🌷"];
+
+  function createEmoji() {
+    const el = document.createElement("div");
+    el.className = "emoji";
+    el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+    el.style.left = Math.random() * window.innerWidth + "px";
+    el.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(el);
+
+    setTimeout(() => {
+      el.remove();
+    }, 5000);
+  }
+
+  setInterval(createEmoji, 300);
+</script>
+
+</body>
+</html>
